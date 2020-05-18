@@ -11,7 +11,7 @@ You need to finish the two parts in Homework11.
 1. Please finish the update function in kalman.cpp then you can refer page 20. in the week_12 ppt.
 2. Please set parameter in the kf_test.cpp and use the following dynamic model parameter.
 
-dynamic model
+Dynamic model
 
 <img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/1.png" width="40%" height="20%">	
 	
