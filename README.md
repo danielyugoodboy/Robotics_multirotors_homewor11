@@ -2,10 +2,10 @@
 # 108 年度 機器人學：多軸旋翼機 
 
 ### Homework11
-We have the two patrs that you need to finish in Homework11
+You need to finish the two parts in Homework11.
 
 1. Please finish the update function in kalman.cpp then you can refer page 20. in the week_12 ppt.
-2. we have the following the dynamic model
+2. Please set parameter in the kf_test.cpp by following dynamic model parameter.
 
 dynamic model
 
