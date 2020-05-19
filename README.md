@@ -15,7 +15,7 @@ Dynamic model:
 
 <img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/1.png" width="40%" height="20%">	
 	
-<img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/5.png" width="90%" height="20%">
+<img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/8.png" width="90%" height="20%">
 
 
 Suppose that the car is equipped with a position sensor that measures its output y with an additive noise v, please find the state estimate (i.e., position, velocity, acceleration)
