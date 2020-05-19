@@ -2,7 +2,7 @@
 # 108 年度 機器人學：多軸旋翼機 
 
 ### Homework11
-Deadline: June 2nd 
+Deadline: June 2
 
 ### Topic
 ---
@@ -18,7 +18,7 @@ Dynamic model:
 <img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/4.png" width="90%" height="20%">
 
 
-Suppose that the car is equipped with a position sensor that measure its position y with an additive noise v, please find the state estimate(i.e, position , velocity ,acceleration)
+Suppose that the car is equipped with a position sensor that measures its output y with an additive noise v, please find the state estimate (i.e., position, velocity, acceleration)
 
 ### Real data
 <img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/3.png" width="40%" height="50%">
