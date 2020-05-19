@@ -13,7 +13,7 @@ for t in range(0,46,1):
 
 ## 製造數據
 for i in range(0,46,1):
-    receve_list[i] = round(num_list[i] + np.random.normal(0, 5),20)
+    receve_list[i] = round(num_list[i] + np.random.normal(0, 20),5)
 print(num_list)
 print(receve_list)
 
