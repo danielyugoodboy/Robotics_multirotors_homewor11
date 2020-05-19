@@ -2,16 +2,16 @@
 # 108 年度 機器人學：多軸旋翼機 
 
 ### Homework11
-Deadline: 6/2
+Deadline: June 2nd 
 
 ### Topic
 ---
-You need to finish the two parts in Homework11.
+Please complete the following two parts for this homework.
 
-1. Please finish the update function in kalman.cpp then you can refer page 20. in the week_12 ppt.
-2. Please set parameter in the kf_test.cpp and use the following dynamic model parameter.
+1. Please finish the update function in kalman.cpp (you can check out page 20 of the ppt. from week_12)
+2. Please set parameters in the kf_test.cpp by using the following dynamic model.
 
-Dynamic model
+Dynamic model:
 
 <img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/1.png" width="40%" height="20%">	
 	
