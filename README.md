@@ -21,7 +21,7 @@ Dynamic model:
 Suppose that the car is equipped with a position sensor that measures its output y with an additive noise v, please find the state estimate (i.e., position, velocity, acceleration)
 
 ### Real data
-<img src= "https://github.com/Robotics-Aerial-Robots/Homework11/blob/master/photo/7.png" width="40%" height="50%">
+The initial condition of the true state is x0=[0; 0; 0].
 
 ### Instruction
 ```
