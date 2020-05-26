@@ -3,6 +3,7 @@
 #include <vector>
 #include <Eigen/Dense>
 #include "hw11/kalman.h"
+#include <queue>
 
 int main(int argc, char **argv)
 {
@@ -56,6 +57,16 @@ int main(int argc, char **argv)
     kf.update(y);
     //show the position velocity acceleration
     std::cout <<  kf.state().transpose() << std::endl;
+  }
+  std::ofstream in;
+  //chage your path "home/ee405423/Desktop"
+  in.open("/home/ee405423/Desktop/data.csv",std::ios::out | std::ios::app);
+  int len = answer.size();
+  for(int i =0; i<len;i++)
+  {
+    std::cout<<"answer.front()"<<answer.front()<<std::endl;
+    in << answer.front()<<",";
+    answer.pop();
   }
     ros::spin();
   return 0;
