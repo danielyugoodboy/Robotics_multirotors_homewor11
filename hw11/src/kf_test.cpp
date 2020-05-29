@@ -1,8 +1,10 @@
-﻿#include <iostream>
 #include <ros/ros.h>
+#include <iostream>
+#include <fstream>
 #include <vector>
 #include <Eigen/Dense>
-#include "hw11/kalman.h"
+#include "hw11/kalman.hpp"
+
 #include <queue>
 
 int main(int argc, char **argv)
@@ -24,7 +26,7 @@ int main(int argc, char **argv)
   Eigen::MatrixXd P(n, n); // Estimate error covariance (3*3)
 
   // Please set parameter in this part and use the dynamic model parameter.
-
+  // Discrete LTI projectile motion, measuring position only
 
   //
 
@@ -38,8 +40,9 @@ int main(int argc, char **argv)
   KalmanFilter kf(dt,A, B, C, Q, R, P);
 
   // List of noisy position measurements (y)
-  std::vector<double> measurements = {
-  21.36207, -18.41971, 143.90836, -52.76939, 81.52611, 67.17912, -5.93449, -0.94632, 111.84432, 38.45614, 141.10963, 196.00361, 110.93513, 157.82011, 163.859, 189.89853, 347.60249, 344.48271, 410.5627, 370.36573, 446.26576, 542.61435, 485.45122, 595.36523, 653.16042, 687.99158, 755.92574, 848.06704, 870.21786, 872.59879, 892.16949, 1048.16843, 1114.30984, 1098.00347, 1273.89832, 1283.50095, 1408.41329, 1356.39875, 1572.20031, 1519.29754, 1695.31637, 1692.42357, 1933.565, 1943.41573, 2008.02941, 2142.3841
+  std::vector<double> measurements =
+  {
+        -41.3476,-10.56936,-0.09996,6.33969,45.89824,45.62117,44.61856,51.14404,60.73781,86.47371,131.77911,118.70147,198.3733,243.21885,223.93135,261.76944,295.08487,304.72116,347.15858,390.1038,445.32955,502.8035,544.69698,553.10905,619.93109,679.36774,691.80668,775.08624,819.29884,877.79287,979.42744,1056.82776,1073.63762,1145.40761,1212.50599,1308.97609,1343.82864,1447.64044,1513.31818,1633.95831,1702.98397,1746.72186,1868.41031,1910.65399,2030.43845,2135.39993
   };
 
   // Best guess of initial states
@@ -51,13 +54,18 @@ int main(int argc, char **argv)
   double t = 0;
   Eigen::VectorXd y(m);
   std::cout << "t = " << t << ", " << "x_hat[0]: " << kf.state().transpose() << std::endl;
+  std::queue<double> answer;
   for (int i = 0; i < measurements.size(); i++) {
     t += dt;
     y << measurements[i];
+    std::cout<<"y"<<y<<std::endl;
     kf.update(y);
     //show the position velocity acceleration
-    std::cout <<  kf.state().transpose() << std::endl;
+    //std::cout <<"kf.state().transpose()" <<kf.state().transpose() << std::endl;
+    std::cout<<"kf.state()(0,0)"<<kf.state()(0,0)<<std::endl;
+    answer.push(kf.state()(0,0));
   }
+
   std::ofstream in;
   //chage your path "home/ee405423/Desktop"
   in.open("/home/ee405423/Desktop/data.csv",std::ios::out | std::ios::app);
@@ -66,6 +74,7 @@ int main(int argc, char **argv)
   {
     std::cout<<"answer.front()"<<answer.front()<<std::endl;
     in << answer.front()<<",";
+
     answer.pop();
   }
     ros::spin();
